@@ -23,6 +23,7 @@
 # @param server_host The fqdn for the instance. Default: $::fqdn
 # @param server_port The port to use for non-SSL traffic. Default: 389
 # @param server_ssl_port The port to use for SSL traffic. Default: 636
+# @param ssl_minssf The min security key settings required to connect. Default: 0
 # @param subject_alt_names An array of subject alt names, if using self-signed certificates. Optional.
 # @param replication A replication config hash. See replication.pp. Optional.
 # @param ssl An ssl config hash. See ssl.pp. Optional.
@@ -43,6 +44,7 @@ define ds_389::instance(
   String                            $server_host           = $::fqdn,
   Integer                           $server_port           = 389,
   Integer                           $server_ssl_port       = 636,
+  Integer                           $ssl_minssf            = 0,
   Optional[Array]                   $subject_alt_names     = undef,
   Optional[Hash]                    $replication           = undef,
   Optional[Hash]                    $ssl                   = undef,
