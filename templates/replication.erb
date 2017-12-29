@@ -27,11 +27,10 @@ objectClass: extensibleObject
 cn: replica
 nsDS5ReplicaRoot: <%= @suffix %>
 nsDS5ReplicaType: <%= @type %>
+nsDS5ReplicaId: <%= @id %>
 nsds5flags: <%= @flags %>
 nsds5ReplicaBindDN: <%= @_bind_dn %>
 <%- if @role != 'consumer' -%>
 nsds5ReplicaPurgeDelay: <%= @purge_delay %>
 <%- end -%>
-<%- if @role == 'supplier' -%>
-nsDS5ReplicaId: <%= @id %>
-<%- end -%>
+
