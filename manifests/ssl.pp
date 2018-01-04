@@ -31,6 +31,7 @@ define ds_389::ssl(
   String                            $user            = $::ds_389::user,
   String                            $group           = $::ds_389::group,
   String                            $ssl_version_min = 'TLS1.1',
+  Integer                           $ssl_minssf      = 0,
 ) {
   include ::ds_389
 
